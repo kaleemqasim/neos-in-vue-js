@@ -59,62 +59,28 @@
             <h2 class="site-section-heading text-uppercase text-center font-secondary">Happy Customers</h2>
           </div>
         </div>
+        
         <div class="row">
-          
-
-          <div class="col-md-6 col-lg-6 mb-4">
-            <div class="d-block block-testimony mx-auto text-center">
-              <div class="person w-25 mx-auto mb-4">
-                <img src="images/person_1.jpg" alt="Image" class="img-fluid rounded-circle w-50 mx-auto">
-              </div>
-              <div>
-                <h2 class="h5 mb-4">Katie Johnson</h2>
-                <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum tempora ipsam!&rdquo;</blockquote>
-              </div>
-            </div>
-
-            
-          </div>
-          <div class="col-md-6 col-lg-6 mb-4">
-            <div class="d-block block-testimony mx-auto text-center">
-              <div class="person w-25 mx-auto mb-4">
-                <img src="images/person_2.jpg" alt="Image" class="img-fluid rounded-circle w-50 mx-auto">
-              </div>
-              <div>
-                <h2 class="h5 mb-4">Jun Mars</h2>
-                <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum tempora ipsam!&rdquo;</blockquote>
+          <!-- Testimonials Loop Start -->
+          <div v-for="testimonial in testimonials" :key="testimonial.id" >  
+            <div class="col-md-6 col-lg-6 mb-4">
+              <div class="d-block block-testimony mx-auto text-center">
+                <div class="person w-25 mx-auto mb-4">
+                  <img src="images/person_1.jpg" alt="Image" class="img-fluid rounded-circle w-50 mx-auto">
+                </div>
+                <div>
+                  <h2 class="h5 mb-4">{{testimonials.name}}</h2>
+                  <blockquote>{{testimonial.description}}</blockquote>
+                </div>
               </div>
             </div>
           </div>
-
-          <div class="col-md-6 col-lg-6 mb-4">
-
-
-            <div class="d-block block-testimony mx-auto text-center">
-              <div class="person w-25 mx-auto mb-4">
-                <img src="images/person_3.jpg" alt="Image" class="img-fluid rounded-circle w-50 mx-auto">
-              </div>
-              <div>
-                <h2 class="h5 mb-4">Shane Holmes</h2>
-                <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum tempora ipsam!&rdquo;</blockquote>
-              </div>
-            </div>
-            
-          </div>
-          <div class="col-md-6 col-lg-6 mb-4">
-            <div class="d-block block-testimony mx-auto text-center">
-              <div class="person w-25 mx-auto mb-4">
-                <img src="images/person_4.jpg" alt="Image" class="img-fluid rounded-circle w-50 mx-auto">
-              </div>
-              <div>
-                <h2 class="h5 mb-4">Mark Johnson</h2>
-                <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum tempora ipsam!&rdquo;</blockquote>
-              </div>
-            </div>
-          </div>
-
-          
+          <!-- Testimonials Loop End -->
         </div>
+
+
+          
+        
       </div>
     </div>
 
@@ -216,6 +182,27 @@ export default {
   name: "Testimonials",
   components: {
     Navigation
+  },
+  data: function(){
+    return {
+      testimonials: [
+        {
+          id: 1,
+          name: "Kaleem Qasim",
+          description: "&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum tempora ipsam!&rdquo;" 
+        }, 
+        { 
+          id: 2,
+          name: "Muhammad Shahzad",
+          description: "&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum tempora ipsam!&rdquo;" 
+        },
+        { 
+          id: 3,
+          name: "Sania Mirza",
+          description: "&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum tempora ipsam!&rdquo;" 
+        },
+      ]
+    }
   }
 };
 </script>
